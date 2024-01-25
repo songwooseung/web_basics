@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>입력 요소 만들기</title>
+    </head>
+    <body>
+        <input name="text" type="text" maxlength="5" placeholder="입력 전에 나타나는 문자!!"><br><br>
+        <!--placeholder="텍스트"는 입력전에 나타나는 속성이다. 
+            maxlength는 최대 문자 길이이다. 예를들어 maxlength가 5면 5개의 문자 입력 후 입력이 되지 않는다.
+        -->
+        <input name="button" type="button" value="Push"><br><br>
+        <!-- button에 value="텍스트"속성을 사용하면 버튼에 텍스트가 출력된다.  -->
+        <input name="color" type="color"> 색상을 골라봐 <br><br>
+        <input name="range" type="range" max="100" min="0" step="10"><br><br>
+        <!--range는 처음에 좌우로 조절만된다.
+            이 떄 max="최댓값" min="최솟값" step="이동시 몇 씩 이동되는지 나타내는 값"을 사용할 수 있다.
+        -->
+        <input name="date" type="date"><br><br>
+
+        <!--정리하자면 input의 기본값은 text이다.-->
+        <!--input의 속성 중 name은 사용자가 정해줄 수 있는 속성이고, 
+            id처럼 사용자가 input요소를 고유하게 식별할 수 있다. 
+        -->
+        <!--input의 type속성은 20여가지가 넘고, 사용방법이 각각 다르다. -->
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>select 또는 textarea</title>
+    </head>
+    <body>
+        <h1>키우고 싶은 동물 고르기</h1>
+        <select name="pet" multiple>
+            <option value="dog">강아지</option>
+            <option value="cat" selected>고양이</option>
+            <option value="hamster">햄스터</option>
+            <option value="parrot">앵무새</option>
+        </select>
+        <!--select태그에는 multiple이라는 속성을 사용할 수 있는데 이는 여러개의 속성을 선택할 수 있도록 해주는
+            속성이다. 사용 예는 <select multiple>처럼 사용한다.
+            다중 선택은 Ctrl을 누른 채로 선택하면 된다.
+        -->
+        <!--option태그에서는 selected라는 속성을 사용할 수 있다.
+            이는, 이미 선택되어 있는 상태에서 시작하는  속성이다. 
+        -->
+        <br>
+        <textarea name="content" rows="10" cols="10">기본적으로 쓰여 있는 텍스트</textarea>
+        <!--rows는 행의 길이, cols는 열의 길이다.-->
+        <!--textarea는 너비를 웹에서 조절할 수 있다.-->
+
+        <!--정리하자면 select는 다수의 옵셜을 포함할 수 있는 선택 메뉴다.
+            selct는 input과 마찬가지고 입력 요소이기 때문에 name을 지정할 수 있다.
+            select 안에는 option 태그를 사용해 표시한다
+            Ex) <select><option>스타벅스</option></select>
+        -->
+        <!--select는 각각의 옵션에 value 속성을 지정해서 실제로 처리될 값을 나타낼 수 있다.
+        -->
+
+        <!--textarea는 여러 줄의 일반 텍스트를 입력할 수 있는 입력 요소이다.
+            textarea 역시 name을 추가하여 구별해줄 수 있는 입력 요소다.
+        -->
+        <!--input은 한 줄 밖에 쓸 수 없지만, textarea는 여러 줄을 사용할 수 있다!!
+        -->
+        
+    </body>
+</html>
