@@ -1,0 +1,34 @@
+<!-- position 1 (relative absolute) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        div {
+            width : 200px; height : 200px;
+            background-color : yellow;
+            position: relative; 
+            border : 1px solid black; /* 기본 위치에서 위에서 100px, 왼쪽에서 100px 떨어지게 함*/
+
+        } 
+        .abs {
+            width: 100px; height : 100px;
+            background-color : red;
+            position : absolute; /* absolute는 문서 흐름에서 제외됨. */
+            top : 0px;
+        }
+        /* 만약 div에서 position을 정의하지 않았다면 abs에서 absolute를 쓰면 브라우저 화면을 기준으로 위치를 잡음  */
+    </style>
+    
+
+</head>
+<body>
+    <div></div>
+    <div>
+        <div class="abs"> </div>
+        <p>ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</p>
+    </div>
+</body>
+</html>
