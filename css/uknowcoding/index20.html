@@ -1,0 +1,30 @@
+<!-- z-index -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        * {font-size : 24px;}
+        div { width : 100px; height : 100px; position : relative;}
+        div:nth-child(1) {background: yellow; }
+        div:nth-child(2) {background: cyan; bottom : 50px;}
+        div:nth-child(3) {background: ivory; bottom : 100px;}
+        div:nth-child(4) {background: mediumslateblue; bottom : 150px;}
+
+        .first{ z-index : 1;}
+        .second{z-index : 2;} /* z-index는 순서가 정해진게 아니라 값만 이전보다 높기만 하면 됨 (훨씬 클 필요 X) */
+        .third{z-index : 1;} /* 정수값이 second보다 작기 때문에 덮어씌어짐 */
+        .fourth{z-index : 4;} 
+    </style>
+    
+
+</head>
+<body>
+    <div class="first">1</div> 
+    <div class="second">2</div>
+    <div class="third">3</div>
+    <div class="fourth">4</div>
+</body>
+</html>
