@@ -1,0 +1,33 @@
+<!-- 가상 클래스 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        [type = "button"] { 
+            width : 100px; height : 30px;
+            background-color: tomato; color : white;
+            border : none; border-radius : 8px;
+        }
+        
+        [type = "button"]:hover { /* :hover 딱 붙여야됨! */ 
+            background-color:  gray;    
+        }
+        [type = "button"]:active {
+            background-color: black;
+        }
+
+       [type = "text"]:focus{
+        background-color: red; /* 텍스트 박스 클릭시 배경 색상 빨강으로 */
+       }
+    </style>
+    
+
+</head>
+<body>
+    <input type="button" value="버튼">
+    <br>
+    <input type="text" placeholder="아무거나 쓰기"> <!-- placeholder : 입력 되기 전에 보이는 힌트 느낌? -->
+</body>
+</html>
