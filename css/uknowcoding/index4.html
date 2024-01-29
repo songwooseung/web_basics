@@ -1,0 +1,27 @@
+<!-- display 속성, border 속성 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+    div{ border : 3px solid red;
+        display : inline; /* div는 전체적인 행을 차지하고, span과 a는 필요한 공간만 차지한다 */
+        /*display : none -> 요소가 사라진 것은 아니고 웹에서 보이지 않게 해줌 */
+    }
+        
+    span{
+        border-width : 5px;
+        border-color : orange;
+        border-style : dashed;
+        display : inline-block; /* 인라인 요소에 너비와 높이를 임의로 조정하기 위해 사용하는 속성 */ 
+        /* 인라인 요소는 너비와 높이가 고정되어 있는데 블럭 레벨 요소는 이 것을 조정할 수 있다. */
+    }
+    </style>
+<body>
+    <div>나는야 블록 레벨</div>
+    <span>나는야 인라인</span>
+</body>
+
+</html>
