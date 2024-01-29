@@ -1,0 +1,23 @@
+<!-- 박스 모델 3 (box-sizing) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    
+    <style>
+        div { 
+            box-sizing : border-box; /* 패딩이 커질 때 테두리는 그대로하고 콘텐츠의 사이즈만 점점 작아지도록 함 */
+            /* box-sizing : content-box; -> 기본값이고, 패딩이나 테두리가 커질 때마다 요소가 커진다. */
+            /* 안에서 값이 추가 될 떄마다 크기가 바뀌네? (가변형) */
+            width: 100px; height : 100px;
+            border : 5px solid tomato;
+            padding : 30px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>    
+</body>
+
+</html>
