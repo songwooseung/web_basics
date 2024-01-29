@@ -1,0 +1,332 @@
+/* 
+HTML : 웹 문서의 콘텐츠를 구성하는 언어
+CSS :웹 문서의 콘텐츠를 꾸며주는 언어 (색상, 크기, 위치 등)
+=> HTML과 함께 사용되지 않는 CSS는 단순 텍스트일 뿐이며, 
+    웹브라우저를 통해 결과물을 확인하기 위해선 HTML과 함께 사용되어야 한다.
+*/
+
+/* CSS의 기본 문법
+
+선택자(selector) {
+    속성(property) : 값(value);
+}
+=> p { color: red; } : p라는 선택자에 color라는 속성을 red라는 값으로 지정
+
+*/
+
+/* HTML에 CSS 적용하는 방법
+
+1. 인라인(inline) 방식
+    - HTML 태그의 style 속성을 사용하여 CSS를 적용하는 방식
+    - 해당 HTML 태그에만 CSS가 적용되며, CSS 재사용이 불가능하다.
+    - 유지보수가 어렵다.
+    - <p style="color: red;">Hello World</p>
+
+2. 내부 참조(embedded) 방식
+    - <head> 태그 내부에 <style> 태그를 사용하여 CSS를 적용하는 방식
+    - 해당 HTML 문서 내 모든 태그에 적용할 수 있다.
+    - <style>
+        p { color: red; }
+      </style>
+
+3. 외부 참조(external) 방식
+    - <link> 태그를 사용하여 외부 CSS 파일을 가져와 적용하는 방식
+    - <link rel="stylesheet" href="style.css"> 
+    - <link> 태그는 <head> 태그 내부에 작성되어야 한다.
+    - html과 css를 분리하여 관리할 수 있다.
+*/
+
+/* 선택자의 종류
+
+1. 전체 선택자
+    - * { color: blue; } : 모든 태그에 적용
+    - *는 '문서 내의 모든 요소'를 의미
+2. 태그 선택자
+    - p { color: blue; } : p 태그에만 적용
+    - 문서 내 모든 p 태그 요소의 글자 색을 파란 색으로 지정
+3. 클래스 선택자    
+    - .red { color: blue; } : class="red"인 태그에만 적용
+    - 문저 내 class가 'red'인 모든 요소의 글자 색을 파란 색으로 지정
+4. 아이디 선택자
+    - #red { color: blue; } : id="red"인 태그에만 적용
+    - 문서 내 id가 'red'인 요소의 글자 색을 파란 색으로 지정 
+    - 단 하나의 요소를 선택할 때 사용한다 -> id는 문서 내 유일함.
+5. 그룹 선택자 
+    - h1, p, div { color : blue; } 
+    - 문서 내 모든 h1, p, div 태그 요소의 글자 색을 파란 색으로 지정한다.
+    - C언어에서 int a, b = 0 이라고 같이 지정해주는 느낌인듯? 
+
+* 선택자 우선 순위 : ( 선택한 요소가 겹치는 경우 어떤 것이 우선적으로 적용되는가? )
+    아이디 선택자 > 클래스 선택자 > 태그 선택자
+
+
+그 외 선택자는? 
+ 
+6. 특성(속성) 선택자
+    - [type="text"] { color: red; } : type="text"인 태그에만 적용
+    - [class] { color : red; } : class 속성을 가진 요소들을 선택해서 모든 색상을 빨간 색으로 적용
+
+    - [class *= "it"] {color : blue;} : 클래스 값에 "it"가 포함되는 요소만 적용 
+    - [class ^= "it"] {color : blue;} : 클래스 값이 "it"으로 시작하는 요소만 적용
+    - [class $= "it"] {color : blue;} : 클래스 값이 "it"으로 끝나는 요소만 적용  
+7. 결합 선택자 
+    - 두 가지로 나뉨 
+        1. 자손 결합자
+            - div p { color : red; } -> div 요소 안에 위치하는 모든 p들에게 적용
+            - div > p { color : red; } -> div 요소 바로 아래에 위치하는 모든 p 요소들에게 적용 
+        2. 형제 결합자 
+            - h1 ~ p { color : red; } -> h1 뒤에 오는 형제 중 모든 p 요소들에게 적용 ( 동일 선상에 있는~ )
+            - h1 + p { color : red; } -> h1 요소의 바로 뒤에 오는 형제 p 요소들에게 적용 
+
+
+가상 클래스 선택자
+    - 가상 클래스 종류 
+    1. hover : 마우스를 올렸을 때만 적용
+        ex) [type = "button"]:hover { background-color:  gray;}
+
+    2. active : 마우스 누르기 등과 같이 사용자가 요소 활성화
+        ex) [type = "button"]:active { background-color: black;} -> hover과 active는 같이 응용하기 
+
+    3. focus : 요소가 포커스 받고 있음
+        ex) [type = "text"]:focus{
+        background-color: red;} -> 텍스트 박스 클릭시 배경 색상 빨강으로 
+
+    4. disabled : 비활성 상태의 요소
+        - textbox 안에 disabled를 쓰면 그 textbox를 사용하지 못함. 
+        ex) style에서 input : disabled{ height : 100px;} -> 사용 불가 상태일 때 높이 100px  
+
+    5. nth-child() : 형제 요소 중에서 특정 요소를 선택해서 스타일을 지정한다
+        - ()안에 n을 넣으면 순서대로 모든 요소에 적용된다.
+        - 2n은 짝수, 2n-1은 홀수 
+        .box:nth-child(3){ background-color: red;} -> box의 3번째 요소의 배경을 빨간색으로 바꾼다.   
+
+
+의사요소 
+    - 선택자에 추가하는 키워드, 이를 이용하여 선택한 요소의 특정 부분에 대한 스타일을 정의할 수 있다. 
+    - 의사요소 종류 
+
+    1. first-line : 첫번 째 줄만 
+        p::first-line { color: red; } -> p::first-line 붙여야됨
+    
+    2. first-letter : 첫 번째 글자만
+        p ::first-letter { color : yellow;}
+    
+    3. marker : list의 도트 색깔, 크기 등을 바꿀 수 있다.
+        li::marker{ color: teal; }
+    
+    4. placeholder : text의 placeholder의 크기와 색상 변경 가능
+        input::placeholder{ font-size:24px; color:black; }
+    
+    5. before, after : 선택한 요소의 자식 요소를 앞 , 뒤에 요소를 추가한다. 
+        p::before{ content : "앞에다 추가한 텍스트"; }
+        p::after{ content : " 뒤에다 추가한 텍스트"; }
+*/
+
+/* 텍스트 속성 종류
+1. font-family : 글꼴 정의
+    *{
+        font-family : Times, monospace, serif;
+    }
+    - 글꼴을 Times로 우선 지정하되 지원되지 않으면 monospace, serif 순으로 지정
+
+2. font-size : 글자 크기
+    - px : 모니터 화소 하나 크기에 대응하는 절대적 크기
+        span { font-size : 16px;} 
+    - rem : <html> 태그의 폰트 사이즈에 대응하는 상대적 크기
+        span { font-size : 2rem;}
+    - em : 상위 태그의 폰트 사이즈에 대응하는 상대적 크기 
+        span { font-size : 1.5em;}
+    
+3. text-align : 정렬 방식을 정의 (기본 왼쪽 정렬)
+    - left, right : 왼쪽 오른쪽 정렬
+    - center : 가운데 정렬
+    - justify : 양끝 정렬 (마지막 줄 제외)
+        p { text-align: right;} -> 오른쪽을 기준으로 정렬
+
+4. color : 글자 색상을 정의한다.
+    속성 유형 
+    - 키워드 -> red, blue, ~~
+        span {color : red;}
+    - RGB 색상 코드 ( # + 16진수 여섯자리 ) -> #000000 : 검은색, #FFFFFF : 흰색 (모든 수치가 가장 높을 때 흰색)
+        span {color : #FF0000; } -> 빨간색
+    - RGB 함수 -> rgb(Red % , Green %, Blue %)
+        span {color : rgb(100%, 0%, 0%);} -> 빨간색
+
+*/
+
+/* 블록 레벨 요소 vs 인라인 요소 
+
+1. 블록 레벨 요소 
+    - 자기가 속한 영역의 너비를 모두 차지하여 블록을 형성 
+    - div, p, h1 등 
+
+2. 인라인 요소 
+    - 자기에게 필요한 만큼의 공간만 차지 
+    - span, a 등 
+
+
+*/
+
+/* display 속성과 border 속성
+
+1. display 속성
+    - display 속성은 요소를 블록과 인라인 요소 중 어느 족으로 처리할지 정의
+    - 속성에는 inline, block, inline-block, none이 있음.
+    - div { display : inline; } -> 블록 레벨 요소인 div 요소를 인라인으로 처리함
+    - a { display : block; } -> 인라인 요소인 a 요소를 블럭 레벨로 처리함
+
+    - div는 전체적인 공간을 사용, span과 a는 필요한 공간만 사용한다.
+
+2. border 속성 (테두리)
+    - 요소가 차지하고 있는 영역에 테두리를 지정 (속성 값으로 테두리 두께, 모양, 크기 등 지정) 
+    - span{ border : 2px solid green;} -> 두께가 2px인 직선 모양 (solid)의 초록 테두리로 만들기
+    - border-color, border-width, border-style을 각각 따로 지정할 수 있다. 
+    - 예제처럼 span안에 border 속성을 한 번에 집어 넣을 수도 있다. -> ;은 마지막에
+    
+    - border style의 속성값에는 none(기본값), solid(직선), dotted(점선), dashed(긴 점선)가 있다.
+*/
+
+
+/* 박스 모델 
+    - 박스 모델에는 바깥쪽 여백 -> 경계선(테두리) -> 안쪽 여백 -> 콘텐츠 영역 순으로 박스 형태로 존재한다
+    
+    1. 각 박스의 영역 크기는 어떻게 지정하는가?
+        - 콘텐츠 영역 : width, height
+        - 안쪽 여백 : padding
+        - 바깥쪽 여백 : margin 
+        - 테두리 : border-width
+    
+    - span은 border, padding, margin을 가질 수 있지만 width와 height는 가질 수 없다.
+    - 이를 사용하기 위해서는 span을 diplay 속성을 통해 inline-block으로 바꾼다.
+    
+    2. padding, margin 다루는 방법
+        - margin은 바깥 쪽 여백, padding은 안 쪽 여백
+
+        - padding으로 상하좌우 여백 정의하는 방법 
+            - padding-top : 상
+            - padding-bottom : 하 
+            - padding-left : 좌
+            - padding-right : 우
+            * 이는 margin에도 동일하게 정의할 수 있다.
+    3. box-sizing 
+        - 요소의 너비와 높이를 계산하는 방법을 지정 
+        - 의도치않게 padding을 통해 다른 요소의 크기가 달라질 때를 대비해 사용
+
+        - content-box : box-sizing의 기본값이고, 너비와 높이가 콘텐츠 영역만을 포함
+            - 패딩이 커질 때 테두리가 같이 커짐
+        - border-box : 너비와 높이가 안쪽 여백과 테두리까지 포함
+            - 패딩이 커질 때 테두리는 그대로 두고 콘텐츠의 크기만 줄어든다
+
+    4. background
+        - 배경은 콘텐츠의 배경을 정의
+        - background의 속성은
+            background-color : 배경 색 정의 
+            background-image : 배경 이미지를 정의
+            background-position : 배경 이미지의 초기 위치 정의
+                - 기본값은 left top
+                - 속성값엔 left, right, top, bottom, center가 있음.
+                - right bottom, right top 이런식으로 대각선 정의 가능
+            background-size : 배경 이미지의 크기 정의
+                - background-size : cover -> 이미지가 깨지지 않는 선에서 최대한 크기를 할당
+                - background-size : contain -> 이미지가 잘리지 않는 한도 내에서 최대한의 크기 할당
+            backgorund-repeat : 배경 이미즈이 반복 방법 정의
+                - 바둑판 형식 안나오게 
+
+        - background : url(cat.jpg) no-repeat; -> 이런 식으로 단축시켜서 활용 가능 순서는 상관없다. (css 특징)
+*/
+
+/* float 속성과 clear 속성
+
+    1. float 속성
+        - float 속성은 요소가 문서의 일반적인 흐름에서 제외되어 자신을 포함하고 있는 컨테이너의 왼쪽이나 오른쪽에 배치되게 함
+        - 속성 값은 none, left, right가 있다. 
+        - 문서의 흐름에선 제외되지만, 필요한 공간만큼만 차지함.
+    2. clear 속성
+        - float 요소 이후에 표시되는 요소가 float을 해제하여 아래로 내려가게 할 수 있음
+        - 속성 값은 none, left, right, both가 있다.
+        - none은 기본값, left와 right는 각각 float이 left거나 right인 것 아래로 내리게 하고, 
+            both는 float으로 지정된 것을 모두 내린다. 
+*/
+
+
+/* position 속성
+
+    - position의 속성 값은 static, relative, absolute, fixed, sticky가 있다.
+    
+    1. static은 기본 값
+
+    2. relative는 요소를 일반적인 문서 흐름에 따라 배치하되, 상하좌우 위치 값에 따라 오프셋을 적용 -> 위치를 ~까지 이동시키기
+        position : relative;
+        top : 100px; left : 100px; 
+        -> 원래 위치보다 위에서 100px 왼쪽에서 100px 떨어져라는 뜻
+
+    3. absolute는 요소를 일반적인 문서 흐름에서 제외되고, 상위 포지션 요소 중 가장 가까운 포지션에 대해 오프셋을 적용
+        position : absolute;
+        top : 100px; left : 100px;
+        -> 상위 요소에 포지션이 지정되지 않았다면, 브라우저를 기준으로 위치를 잡음
+    
+    4. fixed는 요소를 일반적인 문서 흐름에서 제외하고, 지정된 위치에 고정시킨다.
+        position : fixed;
+        top : 50px; left : 50px;
+        -> 스크롤을 내려도 위치가 고정되면서 따라온다.
+    
+    5. sticky는 요소를 일반적인 문서 흐름에 따라 배치하고, 스크롤 되는 가장 가까운 상위 요소에 대해 오프셋 적용 
+        position : sticky;
+        bottom : 0px; 
+        -> 일반적인 문서 흐름에 따라 배치되므로, fixed와는 달리 상위요소에 영향을 받는다. 
+*/
+
+/* flexbox 
+    - 행을 기준으로 진행 방향 바꾸기 
+        .a {display : flex;}  
+        
+    - flex-direction 속성
+        - row, row-reverse, column, column-reverse가 있다. -> reverse는 역방향 
+        - 기본 축은 row다.
+        - 예를 들어 출력 순서가 하나 둘 셋인데 row-reverse나 column-reverse를 쓰면 셋 둘 하나로 출력됨
+    
+    - flexbox 속성
+        - 주축 배치 방법 : justify-content
+        - 교차축 배치 방법 : align-items
+        - 교차축 개별요소 배치 방법 : align-self
+            - flex-end, center, space-around(주축 간 여백을 동일하게), 
+              space-between(첫번째 요소, 마지막 요소 양 끝에 붙이고 사이에 있는 것들을 동일한 여백으로)
+        - 줄 바꿈 여부 : flex-wrap
+            - flex안에 콘텐츠 크기가 flex를 초과할 땐 그것 보다 더 작은 콘텐츠 크기가 적용된다
+                - ex) flex 크기가 300px, 300px일 때 아이템 크기가 중복됐을 떄 값을 초과하면 더 작은 값으로 적용됨. 
+            - nowrap -> 기본 값
+            - wrap -> 크기 초과시 줄바꿔 버리기
+            - wrap-reverse -> 반대로 뒤집기 flex에서 reverse하는 것처럼
+    
+
+*/
+
+/* 상속 
+    - 상속되는 요소 
+        - color, font-family, font-size, font-text-align 등
+    - 상속 안되는 요소
+        - background-color image repeat, border, display 등 
+*/
+
+/* 공용 키워드
+
+    - 키워드 종류 
+    1. inherit
+        - 상위 요소로부터 해당 속성의 값을 받아 사용
+        p { color : inherit; }
+    2. initial
+        - 해당 속성의 기본값(css로 지정한게 아닌 브라우저의 기본값)을 요소에 적용
+        p { border : initial; }
+    3. unset
+        - 상속 속성에 대해서는 inherit처럼, 상속되지 않은 속성에 대해서는 initial처럼 적용
+        p { font-size : unser; }
+*/
+
+/* z-index
+    - z-index는 요소가 쌓이는 순서를 결정할 수 있다.
+    - 정수 값은 쌓임 맥락에서 레벨을 의미되고 값이 클 수록 전면에 표시 
+    - 쓰는 이유 : 블럭 간의 눈으로 보는 우선순위 -> 1번 도형과 2번 도형이 있는데 1번이 2번 도형에게 가려지는 느낌  
+    - 기본 값은 auto이고, 정수값으로 정의 한다.
+    - .first{z-index : n;}, .second{z-index : n;}, .third{z-index : n;} 이런식으로 표현
+    - z-index는 값이 앞에 있는 것보다 크기만 하면 우선 순위가 높다. (값이 앞에 있는 요소보다 훨씬 클 필요는 없음.)
+*/
