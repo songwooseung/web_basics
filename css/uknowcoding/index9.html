@@ -1,0 +1,32 @@
+<!-- float, clear -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        #a {width : 100px; height : 50px;
+            background: orange;
+            float : right /* 문서의 흐름에선 제외되지만 크기는 차지하는구나! */
+        }
+        #b {width : 100px; height : 100px;
+            background-color : royalblue;
+            float : left; /* 자기한테 필요한 공간만 할당받는구나!! 즉 body 태그의 양 옆에 붙어있다. */
+        }
+        
+        p { 
+            clear : both; /* float을 써서 내려올 떈 맘편하게 both를 쓰는 게 좋다. */
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div id="a"></div>
+    <div id="b"></div>
+    <p>안녕하세요 저는 세 번째 테크입니다.</p> <!-- 이렇게 사용하면 -->
+    <p>안녕하세요 저는 세 번째 테크입니다.</p>
+    <p>안녕하세요 저는 세 번째 테크입니다.</p>
+</body>
+</html>
