@@ -1,0 +1,42 @@
+<!-- flexbox 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        .container{ display : flex; /* 기본 축은 row 다*/
+            width : 300px; height : 300px;
+            border : 2px solid black;
+            
+            
+            justify-content: space-between; /* 주축 기준 */
+            /* flex-end, center, space-around(주축 간 여백을 동일하게), 
+                space-between(첫번째 요소, 마지막 요소 양 끝에 붙이고 사이에 있는 것들을 동일한 여백으로)*/
+            
+            align-items: center; /* 교차축 기준 */
+            /*
+            flex-wrap : wrap; /* flex의 행 크기를 초과시 줄바꿈, nowrap은 기본 값, wrap-reverse는 반대로
+            */
+        }
+        
+        .item{
+            width : 60px; height : 60px;
+            background-color: teal;
+        }
+
+        .self {
+            align-self: flex-start; /* 얘 혼자 개별적으로 적용됨*/
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item self">2</div>
+        <div class="item">3</div>
+    </div>
+</body>
+</html>
