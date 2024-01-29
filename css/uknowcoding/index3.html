@@ -1,0 +1,44 @@
+<!-- 텍스트 속성 -->
+
+<!DOCTYPE html>
+<html lang="UTF-8">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style> 
+    /* font-family : 글꼴 */
+    *{
+        font-family: serif, monospace;
+    }
+    /* font-size : 글자 크기
+    h1의 기본 크기는 32px, p는 16px 
+    rem은 html 글자 크기에 따라 크기가 달라짐*/
+    html{font-size : 18px;}
+    h1{ font-size : 32px;}
+    p { font-size : 2rem;} /* 36px */
+    span {font-size : 5em;} /* 상위 태그의 폰트 사이즈에 *5를 한다 */
+
+    /* text-align : 정렬 */
+    p{ text-align: justify; /* 양 끝을 기준으로 정렬 */
+        color : rgb(100%,0%, 0%);} /* == color : red; or color : #FF0000*/ 
+
+    </style>
+</head>
+<body>
+    <h1>아무 내용</h1>
+    <p>반갑다.<span>호호</span></p>
+    
+    <p> 
+        결코 시간이 멈추어 질순 없다
+        무엇을 망설이나 되는 것은 단지 하나 뿐인데
+        바로 지금이 그대에게 유일한 순간이며
+        바로 여기가 단지 그대에게 유일한 장소이다
+
+        환상 속에 그대가 있다
+        모든 것이 이제 다 무너지고 있어도
+        환상 속에 아직 그대가 있다
+        지금 자신의 모습은 진짜가 아니라고 말한다 
+    </p>
+</body>
+
+</html>
