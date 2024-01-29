@@ -1,0 +1,31 @@
+<!-- 가상 클래스 nth-child() -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        body {
+            display : flex;
+            justify-content: space-between; /* 처음과 마지막은 양 끝에 붙이고 그 사이만 동일한 공간 분배 */
+        }
+        .box {
+            width : 50px; height : 50px;
+            background-color: blue; color : white;
+        }
+        .box:nth-child(3){  /* 3번째 box요소의 배경 색상 빨간색으로 */
+            background-color: red; 
+        } 
+    </style>
+    
+
+</head>
+<body>
+    <div class="box">1번</div>
+    <div class="box">2번</div>
+    <div class="box">3번</div>
+    <div class="box">4번</div>
+    <div class="box">5번</div>
+</body>
+</html>
