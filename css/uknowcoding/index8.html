@@ -1,0 +1,38 @@
+<!-- 박스 모델 4 (background) -->
+
+<!-- css는 공백을 무시한다. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        div {
+            box-sizing : border-box;
+            width : 500px; height:500px;
+            border : 1px solid red;
+            /* background-color : orange; */
+
+            /* image, repeat, position, size는 이미지 관련이다.*/
+            background-image: url(./cat.jpg);
+            /* image의 기본 값은 부족하면 바둑판 형식으로 채워짐. */
+            background-repeat: no-repeat; /* 사진 크기만큼만 할당해주기 */
+            background-position: center; /* 위치에 대한 키워드 left, right, top, bottom*/
+            background-size : 300px 400px; /* 할당된 크기만큼 사진 크기 맞춰주기 */
+            /* background-size : cover; -> 이미지 비율이 깨지지 않는 선에서 최대 크기로 지정됨. */
+            /* background-size : cover; -> 이미지가 잘리지 않는 선에서 최대한 크기 할당 */
+        
+            background : url(cat.jpg) no-repeat; /* 이렇게 사용 가능 */
+
+
+            
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div>헬로우</div>
+</body>
+</html>
