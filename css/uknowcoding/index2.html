@@ -1,0 +1,28 @@
+<!-- css 선택자 1  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        HTML 문서
+    </title>
+
+    <style>
+        /* *{color : red;} -> 전체 색상을 red로 */
+        /* p {color : red;} -> p 태그에만 red로 */
+        /* .text {color : green;} -> text 클래스들만 green으로 */
+        /* #ga {color : orange;} -> ga라는 id만 orange로 */ 
+        /*h1, p { color : blue;} -> h1과 p를 blue로 */
+
+        /* 만약 h1 {color : red;} 뒤에 h1 {color : blue;} 가 작성되면 마지막에 작성한 코드가 적용 */
+        /* 또, h1은 text라는 클래스인데 h1 {color : red;} 과 h1 {color : blue;}이 작성되면 우선순위에 의해 red가 적용된다.
+    </style>
+</head>
+<body> 
+    <h1 class="text"> 제목을 나타냄 </h1>
+    <p class="text"> 문단을 표시 ㄱㄱ</p>
+    <p id ="ga"> 문단을 표시 ㄴㄴ</p>
+    <p> 문단을 표시 ㄷㄷ</p>
+</body>
+</html>
