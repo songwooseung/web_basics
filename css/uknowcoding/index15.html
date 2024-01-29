@@ -1,0 +1,32 @@
+<!-- 선택자 2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        /* [class$="xt"] { color : blue;} /* *=는 te 포함, ^=는 첫글자가 te로 시작, $=는 마지막이 te로 끝남
+        [id = "unique"] {color : red;} */
+
+        /* body p { /* body에 있는 p들 모두 적용 
+            color : orange;} */
+
+        /* h1 ~ p { color : salmon;} /* h1 뒤에 오는 모든 p들에게 적용 */
+         
+        p > span { color : darkgoldenrod; } /* p 안에 span에게 적용  */
+        .text + p { color : red; } /* class text 바로 뒤에 오는 p들에게 적용 */  
+
+    </style>
+    
+
+</head>
+<body>
+    <h1>선택자 연습</h1>
+    <p>1번 문단입니다 그냥 태그</p>
+    <p class ="text">2번 문단입니다 클래스 있음</p>
+    <p id ="unique">3번 문단입니다 아이디있음</p>
+    <p class ="text">4번 문단입니다 클래스 있음.</p>
+    <p>2번 문단입니다 <span>스판 있는</span> 태그</p>
+</body>
+</html>
