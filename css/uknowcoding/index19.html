@@ -1,0 +1,39 @@
+<!-- inherit, initial, unset -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 문서</title>
+    <style>
+        div {
+            display : flex;
+            justify-content: center;
+            align-items: center;
+            width  : 300px; height : 300px;
+        
+            color : tomato;
+            font-size:  24px;
+            border: 3px dashed red /* 점선 빨간색*/
+        }
+    
+    p {
+        /* color : teal; -> 상속 안되는 것만 따로 만들어주기*/
+        color : initial; /* 브라우저 기본 값인 검은색 */ 
+        border: inherit; /* 상위 요소인 div꺼 받아서 사용하기 */
+        font-size : unset; /* 상속을 받을 수 있으면 상속 받고, 받을 수 없다면 기본 값 쓰기 */
+
+        /* border는 상속이 안되므로 unset을 쓰면 테두리가 안생긴다. */
+    }
+    </style>
+    
+
+
+</head>
+<body>
+    <div>
+        <p>가운데 p 태그</p> 
+        <!-- p는 div에게 color, fontsize가  상속됨, border는 상속 X -->
+    </div>
+</body>
+</html>
