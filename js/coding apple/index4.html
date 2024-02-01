@@ -1,0 +1,48 @@
+<!-- index2에서 하던 실습 파라미터로 응용-->
+<!-- 함수 업그레이드 => 파라미터 -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset ="UTF-8">
+    <title>Document</title>
+    
+    <!-- css 호출 -->
+    <link rel="stylesheet" href="main2.css">
+
+</head>
+<body>
+   
+    <div class ="alertbox" id="alert">
+        <p>아이디를 입력안하셨어요</p>
+    </div>
+    
+    <button onclick="alertbox_button('block')">아이디 열기</button>
+
+    <button onclick="alertbox2_button('block')">비번 열기</button> 
+
+    <!-- 자바 스크립트 문법 function, parameter -->
+    <script>
+        
+         
+        // 파라미터를 이용하면 open 과 close 함수를 하나의 함수로 만들 수 있다. 
+        function alertbox_button(hole){ // () <- body에서 argument (인자) 호출 받아야함.
+            document.getElementById('alert').innerHTML ='아이디를 입력하셈';
+            // class명 검색해서 찾는법 (클래스는 여러개가 겹칠 수 있기 때문에 ()뒤에 [n]로 순서를 지정해줘야 한다.)
+            // document.getElementsByClassName('alert').style.innerHTML ='아이디 입력하셈';
+            document.getElementById('alert').style.display = hole;
+            
+        }
+
+        function alertbox2_button(hole){ // () <- body에서 argument (인자) 호출 받아야함.
+            document.getElementById('alert').innerHTML ='비번을 입력하셈';
+            document.getElementById('alert').style.display = hole;
+        }
+
+        
+    </script>
+
+</body>
+</html>
