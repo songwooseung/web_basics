@@ -1,0 +1,41 @@
+<!-- index2에서 하던 실습 function으로 응용하기 -->
+<!-- js 오류가 발생할 시 개발자 도구(F12)에서 console창에 들어가서 오류를 확인할 수 있다. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset ="UTF-8">
+    <title>Document</title>
+    
+    <!-- css 호출 -->
+    <link rel="stylesheet" href="main2.css">
+
+</head>
+<body>
+    <div class ="alertbox" id="alert">
+        <p>Alert 박스</p>
+    </div>
+
+    <!-- 열기 & 닫기 버튼 -->
+    
+    <button onclick="open_button()">열기</button>
+
+    <button onclick="close_button()">닫기</button> 
+
+    <!-- 자바 스크립트 문법 (function)-->
+    <script>
+        
+        // open & close는 js에서 이미 내장 함수가 존재하기 때문에 함수 이름으로 사용하면 내장함수가 실행된다.
+        function open_button(){
+            document.getElementById('alert').style.display='block';
+        }
+
+        function close_button(){
+            document.getElementById('alert').style.display='none';
+        }
+        
+    </script>
+
+</body>
+</html>
