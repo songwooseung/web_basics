@@ -1,0 +1,43 @@
+<!-- Alert 창 만들기, -->
+
+<!-- 보여줬다 사라지는 UI 만드는 법 
+    1. 미리 디자인 해놓고 숨김
+    2. 버튼 누르기 등 이벤트 발생 시 보여줌.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset ="UTF-8">
+    <title>Document</title>
+    
+    <!-- css 호출 -->
+    <link rel="stylesheet" href="main2.css">
+
+</head>
+<body>
+    <!-- 웹에 존재하는 UI 종류는 Alert말고 엄청 다양하다. 구글링해보자-->
+    <div class ="alertbox" id="alert">Alert 박스 </div>
+    
+    <!-- onclick : 버튼 클릭 시 이벤트 발생 -->
+    <!-- display : none 일때 화면 가림, block 일때 화면에 보임 -->
+    
+
+    <!-- 열기 & 닫기 버튼 -->
+    
+    <button onclick="document.getElementById('alert').style.display='block'; ">열기
+    </button>
+
+    <button onclick="document.getElementById('alert').style.display='none'; ">닫기
+    </button> 
+
+    <!-- 자바 스크립트 문법 (function)-->
+    <script>
+        function 아무렇게작명(){
+           
+        }
+        
+    </script>
+
+</body>
+</html>
