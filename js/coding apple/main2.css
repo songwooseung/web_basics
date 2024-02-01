@@ -1,0 +1,19 @@
+.yellowbg {
+    background: yellow;
+}
+
+.bluebg {
+    background: skyblue;
+}
+
+
+.alertbox { 
+    background-color: blue;
+    padding : 10px;
+    border-radius : 5px; /* 테두리 둥글기 */
+    display : block; /* 박스 숨기기 1. block 2. none  */
+}
+
+.alertbox p{
+    display : inline; /* block : 다른 요소들을 다른 줄로 밀어내고 혼자 한줄 차지, inline은 줄바꿈 없이 한줄에 다른 요소와 다란히 배치 */
+}
