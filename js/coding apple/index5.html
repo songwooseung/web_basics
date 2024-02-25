@@ -17,10 +17,6 @@
         <button id="close"> X </button> <!-- div 안에 x버튼 눌려서 끄기 -->
     </div>
     
-    <button onclick="alertbox_button('block')">아이디 열기</button>
-
-    <button onclick="alertbox2_button('block')">비번 열기</button> 
-
     <!-- addEventListener 응용 -->
     <script>
 
@@ -29,18 +25,6 @@
             document.getElementById('alert').style.display = 'none';
         });
         
-
-        // index4에서 하던 내용.
-        function alertbox_button(hole){ 
-            document.getElementById('alert').innerHTML ='아이디를 입력하셈';
-            document.getElementById('alert').style.display = hole;
-            
-        }
-
-        function alertbox2_button(hole){ 
-            document.getElementById('alert').innerHTML ='비번을 입력하셈';
-            document.getElementById('alert').style.display = hole;
-        }
     </script>
 
 </body>
